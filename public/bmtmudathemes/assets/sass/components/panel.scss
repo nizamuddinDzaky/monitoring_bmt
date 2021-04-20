@@ -1,0 +1,125 @@
+.panel {
+    .panel-heading {
+        padding: 15px;
+    }
+
+    .panel-body {
+
+        &.card-group {
+            height: 500px;
+            overflow: auto;
+
+            &::-webkit-scrollbar-track
+            {
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+                background-color: #F5F5F5;
+            }
+
+            &::-webkit-scrollbar
+            {
+                width: 6px;
+                background-color: #F5F5F5;
+            }
+
+            &::-webkit-scrollbar-thumb
+            {
+                background-color: rgb(161, 161, 161);
+            }
+        }
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-origin: content-box;
+
+        @include respond-below(sm) {
+            .icon-navigation {
+                &.right {
+                    position: absolute;
+                    right:0;
+                    top: -30px;
+                }
+            }
+        }
+
+        .panel-group-description {
+            font-size: 12px;
+
+            &:before {
+                content: url('../images/demo.png');
+                margin-right: 5px;
+            }
+        }
+        
+        .avatar-icon {
+            i {
+                font-size: 50px;
+                color: $white;
+            }
+        }
+        .content {
+            .content-title {
+                color: $white;
+                font-size: 13px;
+                text-transform: capitalize;
+                font-weight: $font-bold;
+            }
+            .content-description {
+                color: $white;
+                margin-bottom: 0;
+                font-size: 20px;
+            }
+        }
+    }
+
+    &.event {
+        height: 250px; 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-origin: content-box;
+        border: 2px solid $black;
+        cursor: pointer;
+
+        .panel-body {
+            .card-title {
+                width: 160px; 
+                height: 160px; 
+                transform: rotate(45deg); 
+                background-color: $white; 
+                border: 2px solid $black; 
+                justify-content: center; 
+                display: flex; 
+                flex-direction: column;
+
+                .event-name {
+                    transform: rotate(-45deg); 
+                    text-align: center;
+                    text-transform: capitalize;
+                    font-size: 15px;
+                    font-weight: $font-bold;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                }
+            }
+            .event-date {
+                right: 20px;
+                position: absolute;
+                margin-top: -10px;
+                background-color: $white;
+                padding: 10px;
+                .title {
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    font-weight: $font-bold;
+                    margin-bottom: 0;
+                }
+                .date {
+                    text-transform: uppercase;
+                    font-size: 20px;
+                    font-weight: $font-bold;
+                }
+            }
+        }
+    }
+}

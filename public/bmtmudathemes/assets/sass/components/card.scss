@@ -1,0 +1,254 @@
+.card {
+    margin-bottom: 20px;   
+    .title {
+        font-size: 23px !important;
+    }
+
+    &.hover {
+        cursor: pointer;
+                
+        .card-body {
+            height: 15vw;
+            display: flex;
+            flex-direction: column;
+
+            @include respond-below(sm) {
+                height: auto;
+            }
+        }
+    }
+
+    .card-image {
+        img {
+            width: 100%;
+            height: 200px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+
+            @include respond-below(sm) {
+                height: auto;
+            }
+        }
+    }
+    .card-body {
+        .title {
+            text-align: center;
+            padding-bottom: 0;
+            font-size: 15px !important;
+            font-weight: $font-bold;
+            text-transform: uppercase;
+            padding-top: 10px;
+        }
+        .subtitle {
+            margin: 0;
+            margin-top: 5px;
+            color: $grey;
+        }
+        .summernote-content {
+            padding: 20px;
+            padding-top: 0;
+            p {
+                font-size: 12px !important;
+                height: 120px;
+                line-height: 20px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: justify;
+            }
+        }
+        .description {
+            text-align: justify;
+            padding: 20px;
+            padding-top:0;
+            padding-bottom: 0;
+            font-size: 13px;
+
+            p {
+                font-size: 12px !important;
+                height: 100px;
+                line-height: 20px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        .summernote-content {
+            padding: 20px;
+            padding-top:0;
+            padding-bottom: 0;
+            p {
+                font-size: 12px !important;
+                height: 90px;
+                line-height: 15px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: justify;
+            }
+        }
+        .date {
+            padding-left: 20px;
+            padding-right: 20px;
+            background-color: $navbar-background-color;
+            .content {
+                padding: 0;
+                font-size: 12px;
+                text-align: center;
+                color: $white;
+                padding: 10px;
+                margin-bottom: 0;
+                font-weight: $font-bold;
+                &.large {
+                    font-size: 15px !important;
+                }
+            }
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            padding-bottom: 20px;
+
+            .btn {
+                margin-right: 10px;
+                &.background {
+                    &.primary {
+                        background-color: $navbar-background-color;
+                    }
+                    &.danger {
+                        background-color: $red;
+                    }
+                    color: $white;
+                }
+                &.rounded {
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+
+    .overlay {
+        cursor: pointer;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        background-color: rgba(64, 120, 239, 0.3);
+        overflow: hidden;
+        width: calc(100% - 30px);
+        height: 0;
+        margin-left: 15px;
+        border-radius: 5px;
+    }
+
+    &:hover {
+        .overlay {
+            height: calc(100% - 20px);
+        }
+    }
+    
+    &.dashboard {
+
+        padding: 25px;
+        cursor: pointer;
+
+        &.link {
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+
+        .card-title {
+            font-size: $font-large;
+            font-weight: $font-bold;
+            text-transform: uppercase;
+            color: $white;
+
+            &.card-number-large {
+                font-size: $font-number-large;
+            }
+        }
+        .card-category {
+            font-size: $font-medium;
+            font-weight: $font-normal;
+            text-transform: capitalize;
+            color: $white;
+        }
+        .card-description {
+            font-size: $font-small;
+            text-transform: capitalize;
+            color: $smoth-grey;
+        }
+        .card-icon {
+            position: absolute;
+            font-size: $font-large;
+            color: $white;
+
+            &.top {
+                top: 30px;
+            }
+            &.right {
+                right: 40px;
+            }
+        }
+    }
+
+    &.side-image {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        @include respond-below(sm) {
+            flex-direction: column;
+        }
+
+        .side {
+            width: 100%;
+            height: auto;
+
+            @include respond-below(sm) {
+                height: 200px;
+            }
+
+            &.background-image {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-origin: content-box;
+            }
+        }
+
+        .card-body {
+            padding: 20px;
+            padding-top: 100px;
+            width: 130%;
+
+            @include respond-below(sm) {
+                width: 100%;
+                padding-top: 20px;
+            }
+
+            .title {
+                &.large {
+                    font-size: 30px !important;
+                    text-align: left;
+                }
+            }
+            .content {
+                p {
+                    text-align: justify;
+                    font-size: 16px;
+                }
+            }
+            .button-group {
+                position: absolute;
+                left: 10vw;
+                margin-top: -50px;
+
+                @include respond-below(sm) {
+                    position: relative;
+                    margin-top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+}

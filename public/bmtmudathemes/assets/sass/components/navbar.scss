@@ -1,0 +1,98 @@
+.navbar {
+    background-color: $navbar-background-color;
+
+    .navbar-brand {
+        color: $white;
+    }
+
+    .navbar-collapse {
+        .nav {
+            .dropdown {
+                display: flex;
+
+                .dropdown-toggle {
+                    &:focus {
+                        background-color: transparent;
+                    }
+                    i {
+                        color: $white;
+                    }
+
+                    &.navbar-image {
+                        width: 38px;
+                        height: 38px;
+                        background-color: $white;
+                        border-radius: 50%;
+                        margin-right: 5px;
+                        margin-top: 10px;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+
+                    &.navbar-name {
+                        margin-left: -10px;
+                        color: $navbar-text-color;
+                        align-self: center;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+
+            .open
+            {
+                a {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    .navbar-nav {
+        &.hidden-lg {
+            .dropdown {
+                position: absolute;
+                top: 0;
+                right: 50px;
+
+                &.open {
+                    z-index: 1;
+
+                    .dropdown-menu {
+                        background-color: $white;
+                        position: absolute;
+                        left: auto;
+                        right: 0;
+                        margin-right: -35px;
+                        margin-top: 10px;
+                        width: calc(100vw - 28px);
+                        border-radius: 0;
+
+                        @include respond-below(sm) {
+                            box-shadow: 0px 3px 12px #888888;
+                        }
+
+                        li {
+                            a {
+                                padding-left: 5px;
+
+                                .notif-content {
+                                    width: 100%;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .dropdown-toggle {
+                    background-color: transparent;
+                    i {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
