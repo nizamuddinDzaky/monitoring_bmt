@@ -12,9 +12,9 @@
     </a>
 </li>
 
-<li @if(Request::is('admin/report*'))class="active"@endif>
+<li @if(Request::is('admin/neraca*'))class="active"@endif>
     <a href="{{route('admin.report')}}">
         <i class="pe-7s-graph"></i>
-        <p>Report</p>
+        <p>REPORT SHU</p>
     </a>
 </li>

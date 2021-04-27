@@ -190,12 +190,21 @@ class AdminController extends Controller
         }
     }
 
-    public function report()
+    public function neraca()
     {
         $user = User::with('role')->where('id', Auth::user()->id)->first();
         $role = $user->role->roles;
 
         $list_koperasi = koperasi::where('is_active' , 1)->get();
-        return view('admin.report', compact('role', 'list_koperasi'));
+        return view('admin.neraca', compact('role', 'list_koperasi'));
+    }
+
+    public function shu()
+    {
+        $user = User::with('role')->where('id', Auth::user()->id)->first();
+        $role = $user->role->roles;
+
+        $list_koperasi = koperasi::where('is_active' , 1)->get();
+        return view('admin.shu', compact('role', 'list_koperasi'));
     }
 }

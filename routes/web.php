@@ -31,13 +31,14 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/add_koperasi', [App\Http\Controllers\AdminController::class, 'add_koperasi'])->name('admin.add.koperasi');
         Route::post('/edit_koperasi', [App\Http\Controllers\AdminController::class, 'edit_koperasi'])->name('admin.edit.koperasi');
         Route::get('/edit_status_koperasi/{id_koperasi}/{next_status}', [App\Http\Controllers\AdminController::class, 'edit_status_koperasi'])->name('admin.edit.status.koperasi');
-        Route::get('/report', [App\Http\Controllers\AdminController::class, 'report'])->name('admin.report');
+        Route::get('/neraca', [App\Http\Controllers\AdminController::class, 'neraca'])->name('admin.report');
     });
 });
 
 Route::group(['prefix' => 'user'], function() {
     Route::middleware(['auth_user', 'auth'])->group(function() {
         Route::get('/', [App\Http\Controllers\UserController::class, 'dashboard'])->name('user.dashboard');
-        Route::get('/report', [App\Http\Controllers\AdminController::class, 'report'])->name('user.report');
+        Route::get('/neraca', [App\Http\Controllers\AdminController::class, 'neraca'])->name('user.report');
+        Route::get('/shu', [App\Http\Controllers\AdminController::class, 'shu'])->name('user.shu');
     });
 });
